@@ -1,0 +1,7 @@
+def grocery_store(**products):
+    products = sorted(products.items(), key=lambda x: (-x[1], -len(x[0]), x[0])) # we sort by count them by name/key length then alphabetically
+    result = []
+    for product, quantity in products:
+        result.append(f"{product}: {quantity}")
+    return "\n".join(result)
+
